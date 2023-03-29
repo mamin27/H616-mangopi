@@ -14,6 +14,7 @@ dtc -I dts -O dtb -f sun50i-h616-biqu.dts -o sun50i-h616-biqu.dtb
 ### features:
 * I2C (/dev/i2c-1)
 * SPI
+* I2S0 TBD (Look at issue #1 and help with investigatio)
 * activate sensor-led TBD
 
 
