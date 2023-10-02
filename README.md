@@ -10,6 +10,18 @@ sudo apt-get install sunxi-tools device-tree-compiler rpi.gpio-common
 cd /boot/dtb/allwinner/
 dtc -I dts -O dtb -f sun50i-h616-biqu.dts -o sun50i-h616-biqu.dtb
 ```
+# OPi.GPIO package for H616 board (my clone of origin library)
+* current version 0.5.4
+* Added mangopi library
+* How to compile lib:
+```ps
+cd OPi.GPIO
+sudo bin/make_release.sh
+```
+* test of flashing LED
+```ps
+./led_mq_quad.py
+```
 
 ### features:
 * I2C (/dev/i2c-1)
