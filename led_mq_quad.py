@@ -5,9 +5,8 @@ import mangopi.mq_quad
 import OPi.GPIO as GPIO
 from time import sleep          # this lets us have a time delay
 
-#GPIO.setboard(GPIO.H616)    # Orange Pi PC board
-GPIO.setmode(mangopi.mq_quad.BOARD)        # set up BOARD BCM numbering
-GPIO.setup(41, GPIO.OUT)         # set BCM7 (pin 26) as an output (LED)
+GPIO.setmode(mangopi.mq_quad.BOARD)        # set up BOARD MangoPi MQ-QUAD pin numbering
+GPIO.setup(41, GPIO.OUT)         # set MangoPi (LED status) as an output
 
 try:
     print ("Press CTRL+C to exit")
