@@ -361,12 +361,21 @@
 				phandle = <0x2c>;
 			};
 
-			i2s3-pins {
-				pins = "PH5\0PH6\0PH7\0PH8\0PH9";
-				function = "i2s3";
+			i2s0-pins {
+				pins = "PI0\0PI1\0PI2";
+				function = "i2s0";
 				phandle = <0x26>;
 			};
-
+                        i2s0-in-pins {
+                                pins = "PI3";
+                                function = "i2s0_din1";
+                                phandle = <0xb0>;
+                        };
+                        i2s0-out-pins {
+                                pins = "PI4";
+                                function = "i2s0_dout1";
+                                phandle = <0xb1>;
+                        };
 			ir-rx-pin {
 				pins = "PH10";
 				function = "ir_rx";
@@ -480,11 +489,6 @@
 				function = "uart5";
 				phandle = <0x62>;
 			};
-                        status-led-pin {
-                                pins = "PC13";
-                                function = "gpio_out";
-                                phandle = <0xa0>;
-                        };
 		};
 
 		interrupt-controller@3021000 {
@@ -672,13 +676,15 @@
 			phandle = <0x3c>;
 		};
 
-		ahub-i2s3@0x05097000 {
+		ahub-i2s0@0x05097000 {
 			compatible = "allwinner,sunxi-ahub-daudio";
 			reg = <0x5097000 0xadf>;
 			clocks = <0x02 0x5f 0x02 0x5b 0x02 0x5c 0x02 0x5e>;
 			clock-names = "apb\0audio-codec-1x\0audio-codec-4x\0audio-hub";
-			pinctrl-names = "default";
+			pinctrl-names = "default","default","default";
 			pinctrl-0 = <0x26>;
+                        pinctrl-1 = <0xb0>;
+                        pinctrl-2 = <0xb1>;
 			tdm_num = <0x03>;
 			pinconfig = <0x01>;
 			frametype = <0x00>;
@@ -689,7 +695,7 @@
 			signal_inversion = <0x01>;
 			tdm_config = <0x01>;
 			mclk_div = <0x04>;
-			status = "disabled";
+			status = "okay";
 			phandle = <0x68>;
 		};
 
@@ -1834,7 +1840,9 @@
 		i2c2_pins = "/soc/pinctrl@300b000/i2c2-pins";
 		i2c3_pins = "/soc/pinctrl@300b000/i2c3-pins";
 		i2c4_pins = "/soc/pinctrl@300b000/i2c4-pins";
-		i2s3_pins = "/soc/pinctrl@300b000/i2s3-pins";
+		i2s0_pins = "/soc/pinctrl@300b000/i2s0-pins";
+                i2s0_in_pins = "/soc/pinctrl@300b000/i2s0-in-pins";
+                i2s0_out_pins = "/soc/printctrl@300b000/i2s0-out-pins";
 		ir_rx_pin = "/soc/pinctrl@300b000/ir-rx-pin";
 		pwm1_pin = "/soc/pinctrl@300b000/pwm1-pin";
 		pwm2_pin = "/soc/pinctrl@300b000/pwm2-pin";
@@ -1866,7 +1874,7 @@
 		ahub_cpudai2 = "/soc/cpudai2-controller@0x05097000";
 		sndahub = "/soc/sound@0";
 		ahub_i2s1 = "/soc/ahub-i2s1@0x05097000";
-		ahub_i2s3 = "/soc/ahub-i2s3@0x05097000";
+		ahub_i2s0 = "/soc/ahub-i2s0@0x05097000";
 		uart0 = "/soc/serial@5000000";
 		uart1 = "/soc/serial@5000400";
 		uart2 = "/soc/serial@5000800";
