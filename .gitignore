@@ -1,0 +1,7 @@
+OPi.GPIO/dist/*
+OPi.GPIO/OPi.GPIO.egg-info
+OPi.GPIO/build/*
+OPi.GPIO/demo
+OPi.GPIO/.*
+tox.ini
+__pycache__
