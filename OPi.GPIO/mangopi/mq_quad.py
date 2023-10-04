@@ -7,7 +7,7 @@ Alternative pin mappings for Mango PI MQ-QUAD with H616
 (see https://mangopi.org/_media/mq-quad-sch-v1p2.pdf)
 Usage:
 .. code:: python
-   import mangepi.mq-quad
+   import mangepi.mq_quad
    from OPi import GPIO
    GPIO.setmode(mangepi.mq_quad.BOARD)
 """
