@@ -9,7 +9,7 @@ Usage:
 .. code:: python
    import mangepi.mq-quad
    from OPi import GPIO
-   GPIO.setmode(mangepi.mq-quad.BOARD)
+   GPIO.setmode(mangepi.mq_quad.BOARD)
 """
 
 # pin number = (position of letter in alphabet - 1) * 32 + pin number
