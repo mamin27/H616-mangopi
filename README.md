@@ -19,6 +19,8 @@ dtc -I dts -O dtb -f sun50i-h616-biqu.dts -o sun50i-h616-biqu.dtb
 ```ps
 cd OPi.GPIO
 sudo bin/make_release.sh
+cd dist
+pip3 install OPi.GPIO-0.5.4-py2.py3-none-any.whl
 ```
 * test of flashing LED
 ```ps
