@@ -13,7 +13,7 @@ cd /boot/dtb/allwinner/
 dtc -I dts -O dtb -f sun50i-h616-biqu.dts -o sun50i-h616-biqu.dtb
 ```
 # OPi.GPIO package for H616 board (my clone of origin library)
-* current version 0.5.4
+* current version 0.5.4 (added some not applied pull-request from origin https://github.com/rm-hull/OPi.GPIO project)
 * Added mangopi library
 * How to compile lib:
 ```ps
