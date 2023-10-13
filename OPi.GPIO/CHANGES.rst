@@ -5,6 +5,8 @@ ChangeLog
 | Version    | Description                                                         | Date       |
 +============+=====================================================================+============+
 | **0.5.4**  | * Added MangoPi MG-QUAD                                             | 2023/10/02 |
+|            | * Added OrangePi Zero3, Zero 2w pin mappings                        |            |
+|            | * Onboard LED support                                               |            |
 |------------+---------------------------------------------------------------------+------------|
 | **0.5.3**  | * Add pin mappings for Radxa Zero                                   | 2022/06/20 |
 |            | * Added OrangePi Zero2 pin mappings                                 |            |
