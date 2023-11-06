@@ -770,15 +770,26 @@ class PWM:
         self.frequency = frequency
         self.duty_cycle_percent = duty_cycle_percent
         self.invert_polarity = invert_polarity
-
+        
         try:
             sysfs.PWM_Export(chip, pin)  # creates the pwm sysfs object
+            sysfs.PWM_Frequency(chip, pin, frequency)
+        except (OSError, IOError) as e:
+            if e.errno == 16:   # Device or resource busy
+                warnings.warn("Pin {0} is already in use, continuing anyway.".format(pin), stacklevel=2)
+                sysfs.PWM_Unexport(chip, pin)
+                sysfs.PWM_Export(chip, pin)
+            else:
+                raise e
+
+        try:
+            #sysfs.PWM_Export(chip, pin)  # creates the pwm sysfs object
             if invert_polarity is True:
                 sysfs.PWM_Polarity(chip, pin, invert=True)  # invert pwm i.e the duty cycle tells you how long the cycle is off
             else:
                 sysfs.PWM_Polarity(chip, pin, invert=False)  # don't invert the pwm signal. This is the normal way its used.
             sysfs.PWM_Enable(chip, pin)
-            return sysfs.PWM_Frequency(chip, pin, frequency)
+            return
 
         except (OSError, IOError) as e:
             if e.errno == 16:   # Device or resource busy
