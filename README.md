@@ -31,6 +31,11 @@ pip3 install OPi.GPIO-0.5.4-py2.py3-none-any.whl
 ### features:
 * I2C (/dev/i2c-1)
 * SPI
+* PWM
+  - for correct using PWM install OPi.GPIO lib from this site
+  - test script for managing PWM was tested at OrangePi Zero2 [fan_pwm_managed script](https://github.com/mamin27/H616-mangopi/tree/main/test_scripts/orangepi/zero2)
+* GPIO INPUT/OUTPU
+  - test script for managing PIN status was tested at OrangePi Zero2 [fan_gpio_managed script](https://github.com/mamin27/H616-mangopi/tree/main/test_scripts/orangepi/zero2)
 * I2S0 TBD (Look at issue #1 and help with investigatio)
 * activate sensor-led TBD
 
