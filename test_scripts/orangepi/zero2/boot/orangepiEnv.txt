@@ -1,0 +1,10 @@
+verbosity=1
+bootlogo=true
+console=both
+disp_mode=1920x1080p60
+overlay_prefix=sun50i-h616
+overlays=i2c0 i2c3 pwm12 
+rootdev=UUID=5dd5b836-fb32-4678-908e-d23f7a028780
+rootfstype=ext4
+user_overlays=sun50i-h616-orangepi-zero2-ecomet
+usbstoragequirks=0x2537:0x1066:u,0x2537:0x1068:u

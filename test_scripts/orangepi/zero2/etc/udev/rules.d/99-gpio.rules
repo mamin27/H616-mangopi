@@ -1,0 +1,5 @@
+SUBSYSTEM=="gpio", PROGRAM="/bin/sh -c 'find -L /sys/class/gpio/ -maxdepth 2 -exec chown root:gpio {} \; -exec chmod 770 {} \; || true'"
+SUBSYSTEM=="pwm*", PROGRAM="/bin/sh -c 'find -L /sys/class/pwm/ -maxdepth 2 -exec chown root:gpio {} \; -exec chmod -R 770 \; || true'"
+SUBSYSTEM=="pwm*", PROGRAM="/bin/sh -c 'find -L /sys/devices/platform/soc/*.pwm/pwm/pwmchip*/ -maxdepth 2 -exec chown -R root:gpio {} \; -exec chmod -R 770 {} \; || true'"
+#SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add", PROGRAM="/bin/sh -c 'find -L /sys/class/pwm/ -maxdepth 2 -exec chown root:gpio {} \; -exec chmod 770 {} \; || true'"
+SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add", PROGRAM="/bin/sh -c ‘chown root:gpio /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value ; chmod 660 /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value’"
