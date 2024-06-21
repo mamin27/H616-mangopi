@@ -39,6 +39,19 @@ pip3 install OPi.GPIO-0.5.4-py2.py3-none-any.whl
 * I2S0 TBD (Look at issue #1 and help with investigatio)
 * activate sensor-led TBD
 
+Setting of orangepiEnv.txt
+```ps
+comet@mango:~$ cat /boot/orangepiEnv.txt
+verbosity=1
+bootlogo=false
+console=serial
+disp_mode=1920x1080p60
+fdtfile=allwinner/sun50i-h616-biqu.dtb
+overlay_prefix=sun50i-h616,i2c0,i2c1
+rootdev=UUID=f64a1bf8-9eaf-4ea7-a699-71dd553b9872
+rootfstype=ext4
+usbstoragequirks=0x2537:0x1066:u,0x2537:0x1068:u
+```
 
 ```ps
 comet@mangopi:/boot/dtb/allwinner$ i2cdetect -y 1
