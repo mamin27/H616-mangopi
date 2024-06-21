@@ -23,6 +23,17 @@ sudo bin/make_release.sh
 cd dist
 pip3 install OPi.GPIO-0.5.4-py2.py3-none-any.whl
 ```
+* permission rights for your user
+```ps
+sudo groupadd gpio
+sudo usermod -aG gpio <myusername>
+su <myusername>
+sudo chgrp gpio /sys/class/gpio/export
+sudo chgrp gpio /sys/class/gpio/unexport
+sudo chmod 775 /sys/class/gpio/export
+sudo chmod 775 /sys/class/gpio/unexpor
+```
+
 * test of flashing LED
 ```ps
 ./led_mq_quad.py
